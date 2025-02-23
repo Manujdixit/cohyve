@@ -10,7 +10,7 @@ export default function Page() {
     <div className={`min-h-screen flex flex-col`}>
       {/* Background with overlay */}
       <div className="fixed inset-0 z-0 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-black/80 z-10" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-black/70 z-10" />
 
         <div className="w-full h-full overflow-hidden">
           <div className="w-full h-full flex flex-wrap gap-4 p-4 animate-slow-scroll">
@@ -56,7 +56,7 @@ export default function Page() {
           }
 
           .animate-slow-scroll {
-            animation: slow-scroll 60s linear infinite;
+            animation: slow-scroll 120s linear infinite;
             will-change: transform;
           }
         `}</style>

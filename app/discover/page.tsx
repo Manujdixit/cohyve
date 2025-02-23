@@ -92,7 +92,7 @@ export default function DiscoverPage() {
               className="hidden sm:flex flex-1 max-w-xs relative"
               ref={searchRef}
             >
-              <Sparkles className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 transform text-gray-500 fill-lime-400" />
+              <Sparkles className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 transform  text-lime-400" />
               <Input
                 className="w-full bg-[#1b1b1b] border-0 pl-10 rounded-3xl placeholder:text-gray-500 focus:ring-0 focus-visible:ring-0 focus:ring-offset-0 focus-visible:ring-offset-0"
                 placeholder="Try 'Traditional Pottery'"

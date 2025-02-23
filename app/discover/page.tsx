@@ -153,7 +153,8 @@ export default function DiscoverPage() {
               Beta
             </span>
           </Button>
-          <Button variant="ghost" className="text-white/60 hover:text-white">
+          <Button variant="ghost"
+              className="hover:text-black">
             Following
           </Button>
         </div>

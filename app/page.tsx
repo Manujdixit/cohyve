@@ -13,50 +13,126 @@ export default function Page() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-black/70 z-10" />
 
         <div className="w-full h-full overflow-hidden">
-          <div className="w-full h-full flex flex-wrap justify-center gap-2 sm:gap-4  animate-slow-scroll">
-            {discoverimages.map((item, index) => (
-              <div
-                key={item.id}
-                className="relative group w-[45%] sm:w-48 md:w-64 aspect-[3/4] overflow-hidden rounded-lg"
-                style={{
-                  transform: `translateY(${index % 2 ? "10px" : "-10px"})`,
-                  animation: `float ${
-                    3 + (index % 2)
-                  }s ease-in-out infinite alternate`,
-                }}
-              >
-                <img
-                  src={item.url}
-                  alt="asdf"
-                  className="w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-300" />
-              </div>
-            ))}
+          <div className="w-full h-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2 sm:gap-4">
+            <div className="col-span-1 animate-scroll-up">
+              {[...discoverimages, ...discoverimages].map((item, index) => (
+                <div
+                  key={`${item.id}-${index}`}
+                  className="relative group w-full aspect-[3/4] overflow-hidden rounded-lg mb-2 sm:mb-4"
+                >
+                  <img
+                    src={item.url}
+                    alt="asdf"
+                    className="w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-300" />
+                </div>
+              ))}
+            </div>
+            <div className="col-span-1 animate-scroll-down">
+              {[...discoverimages, ...discoverimages].map((item, index) => (
+                <div
+                  key={`${item.id}-${index}-2`}
+                  className="relative group w-full aspect-[3/4] overflow-hidden rounded-lg mb-2 sm:mb-4"
+                >
+                  <img
+                    src={item.url}
+                    alt="asdf"
+                    className="w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-300" />
+                </div>
+              ))}
+            </div>
+            <div className="hidden sm:block col-span-1 animate-scroll-up">
+              {[...discoverimages, ...discoverimages].map((item, index) => (
+                <div
+                  key={`${item.id}-${index}-3`}
+                  className="relative group w-full aspect-[3/4] overflow-hidden rounded-lg mb-2 sm:mb-4"
+                >
+                  <img
+                    src={item.url}
+                    alt="asdf"
+                    className="w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-300" />
+                </div>
+              ))}
+            </div>
+            <div className="hidden md:block col-span-1 animate-scroll-down">
+              {[...discoverimages, ...discoverimages].map((item, index) => (
+                <div
+                  key={`${item.id}-${index}-4`}
+                  className="relative group w-full aspect-[3/4] overflow-hidden rounded-lg mb-2 sm:mb-4"
+                >
+                  <img
+                    src={item.url}
+                    alt="asdf"
+                    className="w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-300" />
+                </div>
+              ))}
+            </div>
+            <div className="hidden lg:block col-span-1 animate-scroll-up">
+              {[...discoverimages, ...discoverimages].map((item, index) => (
+                <div
+                  key={`${item.id}-${index}-5`}
+                  className="relative group w-full aspect-[3/4] overflow-hidden rounded-lg mb-2 sm:mb-4"
+                >
+                  <img
+                    src={item.url}
+                    alt="asdf"
+                    className="w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-300" />
+                </div>
+              ))}
+            </div>
+            <div className="hidden md:block col-span-1 animate-scroll-down">
+              {[...discoverimages, ...discoverimages].map((item, index) => (
+                <div
+                  key={`${item.id}-${index}-4`}
+                  className="relative group w-full aspect-[3/4] overflow-hidden rounded-lg mb-2 sm:mb-4"
+                >
+                  <img
+                    src={item.url}
+                    alt="asdf"
+                    className="w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-300" />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
         <style jsx>{`
-          @keyframes float {
-            from {
+          @keyframes scroll-up {
+            0% {
               transform: translateY(0);
             }
-            to {
-              transform: translateY(-10px);
-            }
-          }
-
-          @keyframes slow-scroll {
-            from {
-              transform: translateY(0);
-            }
-            to {
+            100% {
               transform: translateY(-50%);
             }
           }
 
-          .animate-slow-scroll {
-            animation: slow-scroll 120s linear infinite;
+          @keyframes scroll-down {
+            0% {
+              transform: translateY(-50%);
+            }
+            100% {
+              transform: translateY(0);
+            }
+          }
+
+          .animate-scroll-up {
+            animation: scroll-up 120s linear infinite;
+            will-change: transform;
+          }
+
+          .animate-scroll-down {
+            animation: scroll-down 120s linear infinite;
             will-change: transform;
           }
         `}</style>
@@ -143,3 +219,4 @@ export default function Page() {
     </div>
   );
 }
+

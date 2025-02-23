@@ -65,7 +65,7 @@ export default function Page() {
       {/* Content */}
       <div className="relative z-10 flex flex-col min-h-screen">
         {/* Navigation */}
-        <nav className="w-[490px] h-12 mt-[45px] mx-auto px-4 py-6 flex items-center justify-between bg-[#2e2e2e] border-[0.5px] border-white/10 rounded-[20px]">
+        <nav className="max-w-[490px] h-12 mt-[45px] mx-auto px-4 py-6 flex items-center justify-between bg-[#2e2e2e] border-[0.5px] border-white/10 rounded-[20px]">
           <div className="flex items-center gap-8 ">
             <Link href="/" className="text-white flex items-center ">
               <span className="text-2xl">✧</span>

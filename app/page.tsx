@@ -13,13 +13,13 @@ export default function Page() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-black/70 z-10" />
 
         <div className="w-full h-full overflow-hidden">
-          <div className="w-full h-full flex flex-wrap gap-4 p-4 animate-slow-scroll">
+          <div className="w-full h-full flex flex-wrap justify-center gap-2 sm:gap-4  animate-slow-scroll">
             {discoverimages.map((item, index) => (
               <div
                 key={item.id}
-                className="relative group w-64 h-72 overflow-hidden rounded-lg"
+                className="relative group w-[45%] sm:w-48 md:w-64 aspect-[3/4] overflow-hidden rounded-lg"
                 style={{
-                  transform: `translateY(${index % 2 ? "20px" : "-20px"})`,
+                  transform: `translateY(${index % 2 ? "10px" : "-10px"})`,
                   animation: `float ${
                     3 + (index % 2)
                   }s ease-in-out infinite alternate`,

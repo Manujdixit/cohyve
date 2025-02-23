@@ -59,17 +59,17 @@ export default function DiscoverPage() {
   return (
     <div className="min-h-screen bg-[#0c0c0c] text-white">
       {/* Navigation */}
-      <nav className="sticky top-5 z-50  bg-[#0c0c0c]/80 backdrop-blur-sm">
-        <div className="container mx-auto px-4">
-          <div className="flex h-16 items-center justify-between gap-4">
-            <div className="flex items-center gap-8">
+      <nav className="sticky top-5 z-50 bg-[#0c0c0c]/80 backdrop-blur-sm">
+        <div className="container mx-auto px-2 sm:px-4">
+          <div className="flex h-16 items-center justify-between gap-2 sm:gap-4">
+            <div className="flex items-center gap-2 sm:gap-8">
               <Link href="/" className="flex items-center gap-2">
                 <span className="text-2xl">✧</span>
                 <span>comet</span>
               </Link>
               <Button
                 variant="ghost"
-                className="relative bg-gradient-to-r from-[#1e1e1e] to-[#2a2a2a] text-white hover:text-white/90"
+                className="hidden sm:inline-flex relative bg-gradient-to-r from-[#1e1e1e] to-[#2a2a2a] text-white hover:text-white/90"
               >
                 Upgrade
                 <div className="absolute inset-0 -z-10 bg-gradient-to-r from-purple-500/20 to-blue-500/20 blur-xl" />
@@ -88,16 +88,17 @@ export default function DiscoverPage() {
             </div>
 
             {/* Search */}
-            <div className="flex-1 max-w-sm relative" ref={searchRef}>
-              <div className="relative">
-                <Sparkles className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 transform text-gray-500 fill-lime-400" />
-                <Input
-                  className="w-full bg-[#1b1b1b] border-0 pl-10 rounded-3xl placeholder:text-gray-500 focus:ring-0 focus-visible:ring-0 focus:ring-offset-0 focus-visible:ring-offset-0"
-                  placeholder="Try 'Traditional Pottery'"
-                  onClick={() => setShowSearch(true)}
-                />
-                <Palette className="absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 transform text-gray-500" />
-              </div>
+            <div
+              className="hidden sm:flex flex-1 max-w-xs relative"
+              ref={searchRef}
+            >
+              <Sparkles className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 transform text-gray-500 fill-lime-400" />
+              <Input
+                className="w-full bg-[#1b1b1b] border-0 pl-10 rounded-3xl placeholder:text-gray-500 focus:ring-0 focus-visible:ring-0 focus:ring-offset-0 focus-visible:ring-offset-0"
+                placeholder="Try 'Traditional Pottery'"
+                onClick={() => setShowSearch(true)}
+              />
+              <Palette className="absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 transform text-gray-500" />
               {showSearch && (
                 <div className="absolute top-full left-0 right-0 mt-2 z-[60] bg-[#1b1b1b] rounded-lg shadow-lg border border-white/10">
                   <SearchDialog />
@@ -106,11 +107,19 @@ export default function DiscoverPage() {
             </div>
 
             {/* Right side icons */}
-            <div className="flex items-center gap-2">
-              <Button variant="ghost" size="icon">
+            <div className="flex items-center gap-1 sm:gap-2">
+              <Button
+                variant="ghost"
+                size="icon"
+                className="hidden sm:inline-flex"
+              >
                 <MessageSquarePlus className="h-5 w-5" />
               </Button>
-              <Button variant="ghost" size="icon">
+              <Button
+                variant="ghost"
+                size="icon"
+                className="hidden sm:inline-flex"
+              >
                 <Send className="h-5 w-5" />
               </Button>
               <Button variant="ghost" size="icon">

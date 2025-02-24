@@ -15,17 +15,27 @@ export default function Page() {
 
         <div className="w-full h-full overflow-hidden">
           <div className="w-full h-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2 sm:gap-4">
-            <ScrollingImageColumn direction="up" />
-            <ScrollingImageColumn direction="down" />
-            <ScrollingImageColumn direction="up" className="hidden sm:block" />
+            <ScrollingImageColumn direction="up" startIndex={0} />
+            <ScrollingImageColumn direction="down" startIndex={2} />
+            <ScrollingImageColumn
+              direction="up"
+              className="hidden sm:block"
+              startIndex={4}
+            />
             <ScrollingImageColumn
               direction="down"
               className="hidden md:block"
+              startIndex={6}
             />
-            <ScrollingImageColumn direction="up" className="hidden lg:block" />
+            <ScrollingImageColumn
+              direction="up"
+              className="hidden lg:block"
+              startIndex={8}
+            />
             <ScrollingImageColumn
               direction="down"
               className="hidden lg:block"
+              startIndex={10}
             />
           </div>
         </div>
